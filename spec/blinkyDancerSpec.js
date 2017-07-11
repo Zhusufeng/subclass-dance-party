@@ -23,7 +23,7 @@ describe('blinkyDancer', function() {
       sinon.spy(blinkyDancer, 'step');
       expect(blinkyDancer.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
-      //clock.tick(timeBetweenSteps);
+      clock.tick(timeBetweenSteps);
       console.log('before equal to 1');
       expect(blinkyDancer.step.callCount).to.be.equal(1);
       console.log('after equal to 1');
