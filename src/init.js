@@ -23,12 +23,14 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
+      $("body").height() * Math.random() * 0.5,
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer.$node);
+    var newSpan = '<span class="captions">Hello</span>';
+    dancer.$node.append(newSpan);
   });
 
   $('.lineup').on('click', function(event) {
@@ -44,6 +46,10 @@ $(document).ready(function() {
         dancer.css(styleSettings);
       }
     }
+  });
+
+  $('.captions').mouseover(function (event) {
+    $(this).text("hi");
   });
 });
 
